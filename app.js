@@ -1,10 +1,6 @@
-const bookTitle = qs('book-title');
-const bookAuthor = qs('book-author');
-const removeButton = qs('remove-btn');
-const form = qs('form');
-const formTitle = qs('form-title');
-const formAuthor = qs('form-author');
-const addButton = qs('add-btn');
+
+const addButton = qs('.add-btn');
+const ul = qs('.ul')
 
 let library = [];
 
@@ -13,21 +9,44 @@ function Book(title, author) {
   this.author = author;
 }
 
-addButton.addEventListener('submit', addBookToLibrary);
+addButton.addEventListener('click', addBookToLibrary);
 
 
 
-
-
-
-
-
-
-function addBookToLibrary() {
-  const title = formTitle.value;
-  const author = formAuthor.value;
+function addBookToLibrary(e) {
+  e.preventDefault();
+  const title = qs('.form-title').value;
+  const author = qs('.form-author').value;
+ 
   const book = new Book(title, author);
+
   library.push(book);
+  console.log(library)
+
+  let li = document.createElement('li');
+  
+  const titleSpan = document.createElement('span') 
+  titleSpan.innerHTML = title + ' ';
+  const authorSpan = document.createElement('span') 
+  authorSpan.innerHTML = author + ' ';
+
+
+  const removeButton = document.createElement('button')
+  const hr = document.createElement('hr')
+
+  titleSpan.classList.add('book-title')
+  authorSpan.classList.add('book-author')
+  removeButton.classList.add('remove-btn')
+  removeButton.innerHTML = 'Remove'
+
+  li.appendChild(titleSpan)
+  li.appendChild(authorSpan)
+  li.appendChild(removeButton)
+  li.appendChild(hr)
+
+  ul.appendChild(li)
+
+
 }
 
 function qs(element) {
