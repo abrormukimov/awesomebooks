@@ -1,4 +1,3 @@
-
 const addButton = qs('.add-btn');
 const ul = qs('.ul')
 
@@ -11,7 +10,12 @@ function Book(title, author) {
 
 addButton.addEventListener('click', addBookToLibrary);
 
-
+ul.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-btn')) {
+    e.target.parentElement.remove();
+    removeBookFromLibrary((e.target.previousElementSibling.previousElementSibling.textContent));
+  }
+})
 
 function addBookToLibrary(e) {
   e.preventDefault();
@@ -45,8 +49,14 @@ function addBookToLibrary(e) {
   li.appendChild(hr)
 
   ul.appendChild(li)
+}
 
-
+function removeBookFromLibrary(title) {
+  library.forEach((book, index) => {
+    if(book.title === title) {
+      library.splice(index, 1);
+    }
+  });
 }
 
 function qs(element) {
