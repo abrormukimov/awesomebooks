@@ -6,7 +6,7 @@ const addButton = qs('.add-btn');
 const ul = qs('.ul');
 
 function getFromLocalStorage() {
-  let locallocalstore;
+  let localstore;
   if (localStorage.getItem('localstore') === null) {
     localstore = [];
   } else {
@@ -22,9 +22,9 @@ function setToLocalStorage(book) {
 }
 
 function removeBook(title1) {
-  let localstore = getFromLocalStorage();
-  for (let i = 0; i < localstore.length; i++) {
-    if (localstore[i].title == title1) {
+  const localstore = getFromLocalStorage();
+  for (let i = 0; i < localstore.length; i += 1) {
+    if (localstore[i].title === title1) {
       localstore.splice(i, 1);
     }
   }
