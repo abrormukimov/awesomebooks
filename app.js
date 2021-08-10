@@ -5,8 +5,6 @@ function qs(element) {
 const addButton = qs('.add-btn');
 const ul = qs('.ul');
 
-const library = [];
-
 function getFromLocalStorage() {
   let store;
   if (localStorage.getItem('store') === null) {
@@ -79,6 +77,6 @@ addButton.addEventListener('click', (e) => {
 ul.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
     e.target.parentElement.remove();
-    console.log(e.target.previousElementSibling.previousElementSibling.textContent);
+    removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
   }
 });
