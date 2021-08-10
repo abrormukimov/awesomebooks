@@ -6,29 +6,29 @@ const addButton = qs('.add-btn');
 const ul = qs('.ul');
 
 function getFromLocalStorage() {
-  let store;
-  if (localStorage.getItem('store') === null) {
-    store = [];
+  let locallocalstore;
+  if (localStorage.getItem('localstore') === null) {
+    localstore = [];
   } else {
-    store = JSON.parse(localStorage.getItem('store'));
+    localstore = JSON.parse(localStorage.getItem('localstore'));
   }
-  return store;
+  return localstore;
 }
 
 function setToLocalStorage(book) {
-  const store = getFromLocalStorage();
-  store.push(book);
-  localStorage.setItem('store', JSON.stringify(store));
+  const localstore = getFromLocalStorage();
+  localstore.push(book);
+  localStorage.setItem('localstore', JSON.stringify(localstore));
 }
 
-function removeBook(title) {
-  const store = getFromLocalStorage();
-  store.forEach((book, index) => {
-    if (book.title === title) {
-      store.splice(index, 1);
+function removeBook(title1) {
+  let localstore = getFromLocalStorage();
+  for (let i = 0; i < localstore.length; i++) {
+    if (localstore[i].title == title1) {
+      localstore.splice(i, 1);
     }
-  });
-  localStorage.setItem('store', JSON.stringify(store));
+  }
+  localStorage.setItem('localstore', JSON.stringify(localstore));
 }
 
 function Book(title, author) {
