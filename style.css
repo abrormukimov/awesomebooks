@@ -22,7 +22,8 @@ body {
   min-width: 500px;
 }
 
-h1, h2 {
+h1, 
+h2 {
   text-align: center;
 }
 
@@ -67,4 +68,3 @@ input {
   height: 2rem;
   width: 4rem;
 }
-
