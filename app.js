@@ -6,12 +6,7 @@ const addButton = qs('.add-btn');
 const ul = qs('.ul');
 
 function getFromLocalStorage() {
-  let localstore;
-  if (localStorage.getItem('localstore') === null) {
-    localstore = [];
-  } else {
-    localstore = JSON.parse(localStorage.getItem('localstore'));
-  }
+  const localstore = JSON.parse(localStorage.getItem('localstore')) || [];
   return localstore;
 }
 
@@ -31,6 +26,13 @@ function removeBook(title1) {
   localStorage.setItem('localstore', JSON.stringify(localstore));
 }
 
+function clearFields() {
+  const title = qs('.form-title');
+  const author = qs('.form-author');
+  title.value = '';
+  author.value = '';
+}
+
 function Book(title, author) {
   this.title = title;
   this.author = author;
@@ -48,6 +50,7 @@ function addBookToLibrary(book) {
   titleSpan.classList.add('book-title');
   authorSpan.classList.add('book-author');
   removeButton.classList.add('remove-btn');
+  removeButton.setAttribute('data-title', `${book.title}`);
   removeButton.innerHTML = 'Remove';
 
   li.appendChild(titleSpan);
@@ -72,11 +75,13 @@ addButton.addEventListener('click', (e) => {
   const book = new Book(title, author);
   addBookToLibrary(book);
   setToLocalStorage(book);
+  clearFields();
 });
 
 ul.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
     e.target.parentElement.remove();
-    removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
+    const title = e.target.getAttribute('data-title');
+    removeBook(title);
   }
 });
