@@ -29,6 +29,12 @@ h2 {
 
 li {
   display: flex;
+  height: 2rem;
+  align-items: center;
+}
+
+li:nth-child(odd) {
+  background: gainsboro;
 }
 
 .book-title {

@@ -29,7 +29,7 @@ class Book {
     li.appendChild(titleSpan);
     li.appendChild(authorSpan);
     li.appendChild(removeButton);
-    li.appendChild(hr);
+   
 
     ul.appendChild(li);
   }
