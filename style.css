@@ -4,12 +4,27 @@
 }
 
 body {
-
+  height: 100vh;
+  position: relative;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+}
+
+li {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+
+li:nth-child(odd) {
+  background: rgb(199, 225, 255);
+}
+
+.contact ul li {
+  background-color: #fff;
 }
 
 .nav {
@@ -52,8 +67,8 @@ body {
 }
 
 .date {
-text-align: right;
-margin-top: 10px;
+  text-align: right;
+  margin-top: 10px;
 }
 
 .lib-container {
@@ -70,16 +85,6 @@ h2 {
   text-align: center;
   margin-bottom: 4px;
   color: rgb(106, 106, 255);
-}
-
-li {
-  display: flex;
-  height: 2rem;
-  align-items: center;
-}
-
-li:nth-child(odd) {
-  background: rgb(199, 225, 255);
 }
 
 .book-title {
@@ -110,7 +115,6 @@ hr {
 }
 
 .form {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -166,11 +170,19 @@ input {
   margin-top: 50px;
 }
 
-.contact ul li {
-  background-color: #fff;
-}
-
 .form-section,
 .contact {
   display: none;
+}
+
+.footer {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 96vw;
+  border: 1px solid black;
+}
+
+.footer p {
+  padding: 13px;
 }
