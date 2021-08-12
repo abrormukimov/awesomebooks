@@ -25,7 +25,7 @@ contactLink.addEventListener('click', () => {
 });
 
 /* eslint-disable */
-const { DateTime } = luxon;
+var { DateTime } = luxon;
 const localTime = DateTime.local();
 const time = localTime.toLocaleString(DateTime.DATETIME_MED);
 document.querySelector('.date').innerHTML = time;
