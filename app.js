@@ -18,7 +18,6 @@ class Book {
     const authorSpan = document.createElement('span');
     authorSpan.innerHTML = `${book.author} `;
     const removeButton = document.createElement('button');
-    const hr = document.createElement('hr');
 
     titleSpan.classList.add('book-title');
     authorSpan.classList.add('book-author');
@@ -29,7 +28,6 @@ class Book {
     li.appendChild(titleSpan);
     li.appendChild(authorSpan);
     li.appendChild(removeButton);
-    li.appendChild(hr);
 
     ul.appendChild(li);
   }
