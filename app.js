@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, no-use-before-define, consistent-return, class-methods-use-this */
 function qs(element) {
   return document.querySelector(element);
 }
@@ -112,3 +113,4 @@ ul.addEventListener('click', (e) => {
     Book.removeBook(title);
   }
 });
+/* eslint-enable no-unused-vars, no-use-before-define, consistent-return, class-methods-use-this */
