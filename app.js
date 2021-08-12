@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars, no-use-before-define, consistent-return, class-methods-use-this */
 function qs(element) {
   return document.querySelector(element);
 }
@@ -25,10 +24,12 @@ contactLink.addEventListener('click', () => {
   document.querySelector('.contact').style.display = 'block';
 });
 
+/* eslint-disable */
 const { DateTime } = luxon;
 const localTime = DateTime.local();
 const time = localTime.toLocaleString(DateTime.DATETIME_MED);
 document.querySelector('.date').innerHTML = time;
+/* eslint-enable */
 
 const addButton = qs('.add-btn');
 const ul = qs('.ul');
@@ -113,4 +114,3 @@ ul.addEventListener('click', (e) => {
     Book.removeBook(title);
   }
 });
-/* eslint-enable no-unused-vars, no-use-before-define, consistent-return, class-methods-use-this */
