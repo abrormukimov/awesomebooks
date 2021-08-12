@@ -1,21 +1,57 @@
-html {
-  width: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  max-width: 700px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav {
+  width: 100vw;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 30%;
+}
+
+.nav ul li {
+  background: white;
+  border-right: 1px solid rgb(106, 106, 255);
+  padding-right: 40px;
+}
+
+.nav ul li:hover {
+  color: rgb(106, 106, 255);
+  cursor: pointer;
+}
+
+.logo {
+  padding-left: 50px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  color: rgb(106, 106, 255);
 }
 
 .lib-container {
+  max-width: 70%;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border: 1.5px solid blue;
@@ -104,3 +140,4 @@ input {
   cursor: pointer;
   box-shadow: 2px 2px 2px red;
 }
+
