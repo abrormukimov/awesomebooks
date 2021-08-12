@@ -1,3 +1,28 @@
+const navLink = qs('.nav-list')
+const addLink = qs('.nav-new')
+const contactLink = qs('.nav-contact')
+
+navLink.addEventListener('click', () => {
+  document.querySelector('.form-section').style.display = 'none';
+  document.querySelector('.contact').style.display = 'none';
+  document.querySelector('.lib-section').style.display = 'block';
+
+})
+
+addLink.addEventListener('click', () => {
+  document.querySelector('.lib-section').style.display = 'none';
+  document.querySelector('.contact').style.display = 'none';
+  document.querySelector('.form-section').style.display = 'block';
+
+})
+
+contactLink.addEventListener('click', () => {
+  document.querySelector('.form-section').style.display = 'none';
+  document.querySelector('.lib-section').style.display = 'none';
+  document.querySelector('.contact').style.display = 'block';
+
+})
+
 function qs(element) {
   return document.querySelector(element);
 }
