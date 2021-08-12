@@ -4,6 +4,7 @@
 }
 
 body {
+
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@ body {
 }
 
 .nav {
-  width: 100vw;
+  width: 96vw;
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
@@ -48,6 +49,11 @@ body {
 .logo:hover {
   cursor: pointer;
   color: rgb(106, 106, 255);
+}
+
+.date {
+text-align: right;
+margin-top: 10px;
 }
 
 .lib-container {
@@ -162,5 +168,9 @@ input {
 
 .contact ul li {
   background-color: #fff;
+}
 
+.form-section,
+.contact {
+  display: none;
 }

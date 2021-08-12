@@ -23,6 +23,12 @@ contactLink.addEventListener('click', () => {
 
 })
 
+
+let DateTime = luxon.DateTime;
+let localTime=DateTime.local();
+let time = localTime.toLocaleString(DateTime.DATETIME_MED);
+document.querySelector('.date').innerHTML = time;
+
 function qs(element) {
   return document.querySelector(element);
 }
@@ -31,8 +37,6 @@ const addButton = qs('.add-btn');
 const ul = qs('.ul');
 // const date = qs('.date');
 
-const now = DateTime.now();
-console.log(now);
 
 class Book {
   constructor(title, author) {
