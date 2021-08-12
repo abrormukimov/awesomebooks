@@ -1,42 +1,36 @@
-const navLink = qs('.nav-list')
-const addLink = qs('.nav-new')
-const contactLink = qs('.nav-contact')
+function qs(element) {
+  return document.querySelector(element);
+}
+
+const navLink = qs('.nav-list');
+const addLink = qs('.nav-new');
+const contactLink = qs('.nav-contact');
 
 navLink.addEventListener('click', () => {
   document.querySelector('.form-section').style.display = 'none';
   document.querySelector('.contact').style.display = 'none';
   document.querySelector('.lib-section').style.display = 'block';
-
-})
+});
 
 addLink.addEventListener('click', () => {
   document.querySelector('.lib-section').style.display = 'none';
   document.querySelector('.contact').style.display = 'none';
   document.querySelector('.form-section').style.display = 'block';
-
-})
+});
 
 contactLink.addEventListener('click', () => {
   document.querySelector('.form-section').style.display = 'none';
   document.querySelector('.lib-section').style.display = 'none';
   document.querySelector('.contact').style.display = 'block';
+});
 
-})
-
-
-let DateTime = luxon.DateTime;
-let localTime=DateTime.local();
-let time = localTime.toLocaleString(DateTime.DATETIME_MED);
+const { DateTime } = luxon;
+const localTime = DateTime.local();
+const time = localTime.toLocaleString(DateTime.DATETIME_MED);
 document.querySelector('.date').innerHTML = time;
-
-function qs(element) {
-  return document.querySelector(element);
-}
 
 const addButton = qs('.add-btn');
 const ul = qs('.ul');
-// const date = qs('.date');
-
 
 class Book {
   constructor(title, author) {
