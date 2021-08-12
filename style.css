@@ -141,3 +141,26 @@ input {
   box-shadow: 2px 2px 2px red;
 }
 
+.contact {
+  height: 100vh;
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.contact p {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+.contact ul {
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.contact ul li {
+  background-color: #fff;
+
+}
