@@ -1,22 +1,79 @@
-html {
-  width: 100%;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  max-width: 700px;
+  height: 100vh;
+  position: relative;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+li {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+
+li:nth-child(odd) {
+  background: rgb(199, 225, 255);
+}
+
+.contact ul li {
+  background-color: #fff;
+}
+
+.nav {
+  width: 96vw;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 30%;
+}
+
+.nav ul li {
+  background: white;
+  border-right: 1px solid rgb(106, 106, 255);
+  padding-right: 40px;
+}
+
+.nav ul li:hover {
+  color: rgb(106, 106, 255);
+  cursor: pointer;
+}
+
+.logo {
+  padding-left: 50px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  color: rgb(106, 106, 255);
+}
+
+.date {
+  text-align: right;
+  margin-top: 10px;
 }
 
 .lib-container {
-  margin-top: 1.5rem;
+  max-width: 70%;
+  margin-top: 4.5rem;
   margin-bottom: 1.5rem;
   border: 1.5px solid blue;
   padding: 10px;
@@ -28,16 +85,6 @@ h2 {
   text-align: center;
   margin-bottom: 4px;
   color: rgb(106, 106, 255);
-}
-
-li {
-  display: flex;
-  height: 2rem;
-  align-items: center;
-}
-
-li:nth-child(odd) {
-  background: rgb(199, 225, 255);
 }
 
 .book-title {
@@ -68,11 +115,11 @@ hr {
 }
 
 .form {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: 400px;
   align-items: center;
+  margin-top: 4.5rem;
 }
 
 input {
@@ -103,4 +150,39 @@ input {
   color: white;
   cursor: pointer;
   box-shadow: 2px 2px 2px red;
+}
+
+.contact {
+  height: 70vh;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.contact p {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+.contact ul {
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form-section,
+.contact {
+  display: none;
+}
+
+.footer {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 96vw;
+  border: 1px solid black;
+}
+
+.footer p {
+  padding: 13px;
 }
